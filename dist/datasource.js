@@ -51,6 +51,7 @@ System.register(["lodash", "./query"], function (_export, _context) {
   }
 
   function timestampPoints(values, start, increment) {
+    start = start * 1000;  // HACK to change start time from dalmatinerfe from second to millisecond
     var r = new Array(values.length);
     for (var i = 0; i < values.length; i++) {
       r[i] = [values[i], start + i * increment];
